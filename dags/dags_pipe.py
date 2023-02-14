@@ -25,8 +25,7 @@ with DAG(
     start_dag =DummyOperator(
         task_id='start_dag'
         )
-
-    t12 = DockerOperator(
+    t1 = DockerOperator(
     task_id='web_scraping',
     image='airflow_scraper:latest',
     container_name ='task___web_scraping',
@@ -36,18 +35,11 @@ with DAG(
     docker_url="unix://var/run/docker.sock",
     network_mode="bridge",
     environment={
+        postgres:13
 
     }
-    )
-    t2 =PythonOperator(
-    task_id=' scraping-sitemap',
-    bash_command='echo "links"'
-    )
-    t3 =PythonOperator(
-    task_id=' scraping-properties-new',
-    bash_command='echo "links"'
     )
     end_dag = DummyOperator(
         task_id='end_dag'
     )
-start_dag >> t2 >> t3 >> end_dag
+start_dag >> t1 >> end_dag
