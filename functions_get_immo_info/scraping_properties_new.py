@@ -27,9 +27,6 @@ def get_data_from_link(file1, file2):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
         'Referer': 'https://www.immoweb.be/'
     }
-    # options = Options()
-    # options.add_argument('--disable-blink-features=AutomationControlled')
-    # options.binary_location =r'C:\Program Files\Mozilla Firefox\firefox.exe'
     count = 0
     with open(file1, "r") as file1:
         with open(file2, 'w', newline="", encoding='utf-8') as file2:
@@ -59,7 +56,6 @@ def get_data_from_link(file1, file2):
                     property_info = json_data["classified"]
                     print(property_info)
                     flat_property_info = flatten(property_info)
-                    print(111111111111111)
                 except:
                     continue
                 try:
@@ -76,22 +72,14 @@ def get_data_from_link(file1, file2):
                     required_property_info = {key: value
                                               for key, value in flat_property_info.items()
                                               if key in key_lst}
-                    # print(required_property_info)
-                    print(2222222222222222222222222222222222222222222222222222222222)
                 except:
                     continue
                 try:
-                    writer.writerow(required_property_info)
-                    print(333333333333333333333333333333333333)
-                    #file2.writelines(required_property_info)
-                    print(4444444444444444444444444444444444444)
+                    writer.writerow(required_property_info)                
                     count = count + 1
                     print(count)
                 except:  
-                    continue
-                
-                
-
+                    continue               
     Parallel(n_jobs=-2, require="sharedmem", verbose=10)(delayed(get_data_from_link)(file1, file2))
     file2.close()
 

@@ -1,11 +1,3 @@
-# """ 'id', 'type', 'subtype', 'price', 'transactionType', 'zip', 'visualisationOption',
-#         # 'kitchen_type',
-#         'building_constructionYear', 'building_condition',
-#         'energy_heatingType', 'certificates_primaryEnergyConsumptionLevel',
-#         'bedroom_count', 'land_surface', 'atticExists', 'basementExists',
-#         'outdoor_garden_surface', 'outdoor_terrace_exists', 'specificities_SME_office_exists',
-#         'wellnessEquipment_hasSwimmingPool', 'parkingSpaceCount_indoor', 'parkingSpaceCount_outdoor',
-#         'condition_isNewlyBuilt' """
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 # Connect to the default database (postgres)
@@ -24,11 +16,11 @@ cur.execute("CREATE DATABASE realestate;")
 conn.commit()
 # Connect to the database
 conn = psycopg2.connect(
-    host="localhost"
-    database="realestate"
-    user="postgres"
-    password="bea"
-    )
+        host="localhost",
+        database="realestate",
+        user="postgres",
+        password="bea",
+        )
 conn.commit()
 # Create a cursor object
 cur = conn.cursor()

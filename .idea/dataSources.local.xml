@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-223.8617.48">
+    <data-source name="realestate@localhost" uuid="4e41e8d0-9306-445b-9b3d-36b4c3e974fe">
+      <database-info product="PostgreSQL" version="15.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="15.2" exact-driver-version="42.5">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="realestate" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>

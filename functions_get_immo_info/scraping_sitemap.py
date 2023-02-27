@@ -4,7 +4,6 @@ import csv
 
 file2 = 'original.csv'
 
-
 def get_links_from_sitemap(homepage_url:'https://www.immoweb.be/nl', file2):
         ##use sitemap xml to get all the links on immoweb
         tree = sitemap_tree_for_homepage(homepage_url)
@@ -18,9 +17,7 @@ def get_links_from_sitemap(homepage_url:'https://www.immoweb.be/nl', file2):
         i = 0
         file2 = open(file2, "w")
         for s in urls:
-            print(22222222222222)
             for value in prop_list:
-                print(3333333333333333)
                 substring = (f'https://www.immoweb.be/nl/zoekertje/{value}/te-koop')
                 if substring in s:
                         i += 1
