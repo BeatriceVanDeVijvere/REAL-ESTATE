@@ -36,4 +36,4 @@ all in docker container\
 put data on postgres database \
 compare for doubles\
 make accesible in API\
-model , train and test the prices and make preediction basedv on certain parameters
+model , train and test the prices and make prediction based on certain parameters
