@@ -35,4 +35,5 @@ get info from the links\
 all in docker container\
 put data on postgres database \
 compare for doubles\
-make accesible in API
+make accesible in API\
+model , train and test the prices and make preediction basedv on certain parameters
